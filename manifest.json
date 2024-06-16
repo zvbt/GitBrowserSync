@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "GitBrowserSync",
+  "description": "Sync bookmarks & extensions to a github repo.",
+  "author": "zvbt",
+  "homepage_url": "https://github.com/zvbt/GitBrowserSync",
+  "version": "0.0.1",
+  "permissions": [
+    "bookmarks",
+    "management",
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
