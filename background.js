@@ -82,7 +82,7 @@ async function saveToGitHub(token, repo, data) {
 
 
 async function fetchFromGitHub(token, repo) {
-    const path = 'bookmarks_and_extensions.json';
+    const path = 'GitBrowserSync-data.json';
     
     try {
         const response = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
