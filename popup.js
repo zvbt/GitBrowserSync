@@ -1,3 +1,15 @@
+// load saved settings
+document.addEventListener('DOMContentLoaded', () => {
+    chrome.storage.sync.get(['githubRepo', 'githubToken'], (items) => {
+        if (items.githubRepo) {
+            document.getElementById('repo').value = items.githubRepo;
+        }
+        if (items.githubToken) {
+            document.getElementById('token').value = items.githubToken;
+        }
+    });
+});
+
 document.getElementById('saveSettingsButton').addEventListener('click', () => {
     const repo = document.getElementById('repo').value;
     const token = document.getElementById('token').value;
