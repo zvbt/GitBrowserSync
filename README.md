@@ -28,7 +28,7 @@ This Chrome extension allows users to save their bookmarks and installed extensi
 1. **Saving Data to GitHub:**
 
    - Click on the extension icon in the Chrome toolbar.
-   - Enter your GitHub personal access token and the repository where you want to store the data.
+   - Enter your GitHub personal access token and the repository where you want to store the data. (Make a private repo for privacy!)
    - Click "Save" to upload your bookmarks and extensions to GitHub.
 
 2. **Importing Data:**
