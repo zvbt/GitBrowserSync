@@ -36,9 +36,10 @@ function decodeBase64ToUnicode(str) {
 }
 
 async function saveToGitHub(token, repo, data) {
-    const path = 'bookmarks_and_extensions.json';
+    const path = 'GitBrowserSync-data.json';
     const content = encodeUnicodeToBase64(JSON.stringify(data));
-    
+    let sha = null;
+
     try {
         const currentContentResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
             headers: {
@@ -46,13 +47,13 @@ async function saveToGitHub(token, repo, data) {
             }
         });
 
-        if (!currentContentResponse.ok) {
+        if (currentContentResponse.ok) {
+            const currentContent = await currentContentResponse.json();
+            sha = currentContent.sha;
+        } else if (currentContentResponse.status !== 404) {
             const errorText = await currentContentResponse.text();
             throw new Error(`Failed to fetch current content from GitHub: ${currentContentResponse.status} - ${errorText}`);
         }
-
-        const currentContent = await currentContentResponse.json();
-        const sha = currentContent.sha;
 
         const response = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
             method: 'PUT',
@@ -61,7 +62,7 @@ async function saveToGitHub(token, repo, data) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                message: 'Update bookmarks and extensions',
+                message: `Backup created on ${new Date().toLocaleString()}`,
                 content: content,
                 sha: sha
             })
