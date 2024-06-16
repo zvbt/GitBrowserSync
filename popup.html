@@ -1,16 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save to GitHub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+        body {
+            background-color: #171717;
+            color: #ffffff;
+            font-family: "Karla";
+            padding: 20px;
+            width: 300px;
+        }
+        h3 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+        input[type="text"],
+        input[type="password"],
+        button {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #2b2b2b;
+            border: none;
+            color: #ffffff;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        button {
+            cursor: pointer;
+            background-color: #4295f3;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #4263f3;
+        }
+        hr {
+            border-color: #666666;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <h3>GitHub Settings</h3>
+    <h3>GitBrowserSync</h3>
     <input type="text" id="repo" placeholder="Repository (username/repo)">
     <input type="password" id="token" placeholder="GitHub Token">
     <button id="saveSettingsButton">Save GitHub Settings</button>
     <hr>
-    <button id="saveButton">Save Bookmarks and Extensions to GitHub</button>
-    <button id="importButton">Import Bookmarks and Extensions from GitHub</button>
+    <button id="saveButton">Sync to GitHub</button>
+    <button id="importButton">Import from GitHub</button>
+
     <script src="popup.js"></script>
 </body>
 </html>
