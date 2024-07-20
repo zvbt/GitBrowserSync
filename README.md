@@ -52,7 +52,7 @@ This extension requires the following permissions:
 ### Issues and Contributions
 
 - **Beta Version:** This extension is currently in beta testing. It may contain bugs and is not recommended for production use.
-- If you encounter any issues or have suggestions for improvement, please open an issue on [GitHub Issues](https://github.com/your/repository/issues).
+- If you encounter any issues or have suggestions for improvement, please open an issue on [GitHub Issues](https://github.com/zvbt/GitBrowserSync/issues).
 - Contributions are welcome! Fork the repository and submit a pull request with your changes.
 
 ## License
